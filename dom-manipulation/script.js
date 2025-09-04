@@ -40,6 +40,22 @@ function addQuote() {
   }
 }
 
-// Event listener for button
+// Function to create the Add Quote form
+function createAddQuoteForm() {
+  const container = document.createElement("div");
+
+  container.innerHTML = `
+    <input id="newQuoteText" type="text" placeholder="Enter a new quote" />
+    <input id="newQuoteCategory" type="text" placeholder="Enter quote category" />
+    <button onclick="addQuote()">Add Quote</button>
+  `;
+
+  document.body.appendChild(container);
+}
+
+// Event listener for "Show New Quote" button
 document.getElementById("newQuote")
   .addEventListener("click", showRandomQuote);
+
+// Call this once to inject the form on load
+createAddQuoteForm();
