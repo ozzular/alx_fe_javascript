@@ -1,26 +1,37 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <meta charset="utf-8" />
-  <meta name="viewport" content="width=device-width,initial-scale=1" />
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Dynamic Quote Generator</title>
 </head>
 <body>
   <h1>Dynamic Quote Generator</h1>
 
-  <!-- Quote display area -->
+  <!-- Quote Display -->
   <div id="quoteDisplay"></div>
-
-  <!-- Button to show random quotes -->
   <button id="newQuote">Show New Quote</button>
 
-  <!-- Controls: import + export -->
-  <div style="margin-top:16px;">
-    <input type="file" id="importFile" accept=".json" onchange="importFromJsonFile(event)" />
-    <button id="exportBtn" type="button">Export Quotes (JSON)</button>
+  <!-- Add New Quote -->
+  <div>
+    <input id="newQuoteText" type="text" placeholder="Enter a new quote" />
+    <input id="newQuoteCategory" type="text" placeholder="Enter quote category" />
+    <button onclick="addQuote()">Add Quote</button>
   </div>
 
-  <!-- Script at bottom so DOM nodes exist when script runs -->
+  <!-- JSON Import/Export -->
+  <div>
+    <button onclick="exportToJsonFile()">Export Quotes</button>
+    <input type="file" id="importFile" accept=".json" onchange="importFromJsonFile(event)" />
+  </div>
+
+  <!-- Categories and Quotes List -->
+  <h2>Categories</h2>
+  <div id="categoryList"></div>
+
+  <h2>All Quotes</h2>
+  <div id="quotesList"></div>
+
   <script src="script.js"></script>
 </body>
 </html>
