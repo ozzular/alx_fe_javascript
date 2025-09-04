@@ -1,8 +1,8 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width,initial-scale=1" />
   <title>Dynamic Quote Generator</title>
 </head>
 <body>
@@ -14,7 +14,13 @@
   <!-- Button to show random quotes -->
   <button id="newQuote">Show New Quote</button>
 
-  <!-- Script -->
+  <!-- Controls: import + export -->
+  <div style="margin-top:16px;">
+    <input type="file" id="importFile" accept=".json" onchange="importFromJsonFile(event)" />
+    <button id="exportBtn" type="button">Export Quotes (JSON)</button>
+  </div>
+
+  <!-- Script at bottom so DOM nodes exist when script runs -->
   <script src="script.js"></script>
 </body>
 </html>
